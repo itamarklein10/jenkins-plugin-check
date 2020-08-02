@@ -8,13 +8,13 @@ jobs:
   logLatestRelease:
     runs-on: ubuntu-latest
     steps:
-      - uses: octokit/request-action@v2.x
+      - uses: actions/checkout@main
         id: get_latest_release
         with:
           route: POST "https://api.testproject.io/v2/projects/8AKvFLJScEmtFPelPYyopg/jobs/qTVvaDX3AEuX9uisw5q0Tw/run"
           repository: ${{ github.repository }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: "echo latest release: ${{ steps.get_latest_release.outputs.data }}"
+          TP_API_KEY: ${{ secrets.TP_API_TOKEN }}
+    
 
 
