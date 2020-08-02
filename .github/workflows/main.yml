@@ -1,4 +1,4 @@
-Name: run testproject job
+name: run testproject job
 on:
   push:
     branches:
