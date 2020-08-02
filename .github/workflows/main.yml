@@ -13,6 +13,7 @@ jobs:
         with:
           url: 'https://api.testproject.io/v2/projects/8AKvFLJScEmtFPelPYyopg/jobs/qTVvaDX3AEuX9uisw5q0Tw/run'
           method: 'POST'
+          headers: "{'Authorization':mRPhq26xIkLrCIhZ1vL2RJI_BfUzO7o3ExUeTfzOKkI1}"
     
 
 
