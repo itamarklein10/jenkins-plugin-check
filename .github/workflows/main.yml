@@ -11,6 +11,6 @@ jobs:
       - uses: actions/checkout@main
         id: get_latest_release
         with:
-          route: POST "https://api.testproject.io/v2/projects/8AKvFLJScEmtFPelPYyopg/jobs/qTVvaDX3AEuX9uisw5q0Tw/run"
+          path: POST "https://api.testproject.io/v2/projects/8AKvFLJScEmtFPelPYyopg/jobs/qTVvaDX3AEuX9uisw5q0Tw/run"
         env:
           TP_API_KEY: ${{ secrets.TP_API_KEY }}
