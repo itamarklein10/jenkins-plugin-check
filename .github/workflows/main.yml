@@ -1,19 +1,16 @@
 name: run testproject job
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+
 jobs:
-  request:
+  logLatestRelease:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@main
+        id: get_latest_release
         with:
-          ref: ${{ github.ref }}
-
-      - name: Run a job
-        uses: ./
-        with:
-          url: 'https://api.testproject.io/v2/projects/8AKvFLJScEmtFPelPYyopg/jobs/qTVvaDX3AEuX9uisw5q0Tw/run'
-          method: 'POST'
-          headers: "{'Authorization':mRPhq26xIkLrCIhZ1vL2RJI_BfUzO7o3ExUeTfzOKkI1}"
-    
-
-
+          route: POST "https://api.testproject.io/v2/projects/8AKvFLJScEmtFPelPYyopg/jobs/qTVvaDX3AEuX9uisw5q0Tw/run"
+        env:
+          TP_API_KEY: ${{ secrets.TP_API_KEY }}
