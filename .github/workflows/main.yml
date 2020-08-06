@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@main
         id: get_latest_release
         with:
-          path: POST "https://api.testproject.io/v2/projects/8AKvFLJScEmtFPelPYyopg/jobs/qTVvaDX3AEuX9uisw5q0Tw/run"
+       #   path: POST "https://api.testproject.io/v2/projects/8AKvFLJScEmtFPelPYyopg/jobs/qTVvaDX3AEuX9uisw5q0Tw/run"
           issue_message: "hello world" 
         env:
           TP_API_KEY: ${{ secrets.TP_API_KEY }}
